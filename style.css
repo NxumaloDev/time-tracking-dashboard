@@ -1,0 +1,235 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Rubik';
+
+    display: grid;
+    place-items: center;
+    background: var(--Very-dark-blue);
+}
+
+:root {
+    --Blue: hsl(246, 80%, 60%);
+
+    --work: hsl(15, 100%, 70%);
+    --play: hsl(195, 74%, 62%);
+    --study: hsl(348, 100%, 68%);
+    --exercise: hsl(145, 58%, 55%);
+    --social: hsl(264, 64%, 52%);
+    --self-care: hsl(43, 84%, 65%);
+
+    --Very-dark-blue: hsl(226, 43%, 10%);
+    --Dark-blue: hsl(235, 46%, 20%);
+    --Desaturated-blue: hsl(235, 45%, 61%);
+    --Pale-Blue: hsl(236, 100%, 87%);
+}
+
+.flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main {
+    display: grid;
+    gap: 2rem;
+    color: var(--Pale-Blue);
+    padding: 2rem;
+}
+
+main section {
+    position: relative;
+}
+
+main section div[class*='-'][class*='bg'] {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    border-radius: 10px;
+    height: 100%;
+    overflow: hidden;
+    z-index: -1;
+}
+
+main section div[class*='bg'] img {
+    width: 4rem;
+    height: 4rem;
+}
+
+main section div[class*='ctn'] {
+    padding: 2rem 1rem;
+    background: var(--Dark-blue);
+    border-radius: 10px;
+    display: grid;
+    gap: .5rem;
+    transform: translateY(2.5rem);
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+main section div[class*='ctn'] .flex * {
+    margin: 0;
+}
+
+main section div[class*='ctn'] .flex:last-of-type h3 {
+    font-size: 2rem;
+    font-weight: 100;
+    color: white;
+}
+
+main section div[class*='ctn']:hover,
+main section div[class*='ctn']:focus-within {
+    background: var(--Desaturated-blue);
+}
+
+main section div[class*='ctn'] .flex:first-of-type p {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+main section div[class*='ctn'] .flex:first-of-type img:hover,
+main section div[class*='ctn'] .flex:first-of-type img:focus-within {
+    filter: brightness(0) saturate(100%) invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
+}
+
+.info-section {
+    background: var(--Dark-blue);
+    border-radius: 10px;
+}
+
+.info-section .profile {
+    background: var(--Blue);
+    padding: 2rem;
+    gap: 1rem;
+    border-radius: 10px;
+}
+
+.profile > img {
+    width: 4rem;
+    border: 3px solid white;
+    border-radius: 50%;
+}
+
+.profile-names {
+    font-size: .9rem;
+    display: grid;
+    gap: .5rem;
+}
+
+.profile-names * {
+    margin: 0;
+}
+
+.profile-names h2 {
+    font-weight: 100;
+    color: white;
+}
+
+.info-section button {
+    background: none;
+    border: none;
+    font-family: inherit;
+    color: inherit;
+    font-size: inherit;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.info-section .flex button:hover,
+.info-section .flex button:focus-within {
+    color: white;
+}
+
+.info-section .flex:last-of-type {
+    padding: .5rem 2rem;
+}
+
+.work-gc .work-bg {
+    background: var(--work);
+}
+
+.play-gc .play-bg {
+    background: var(--play);
+}
+
+.study-gc .study-bg {
+    background: var(--study);
+}
+
+.exercise-gc .exercise-bg {
+    background: var(--exercise);
+}
+
+.social-gc .social-bg {
+    background: var(--social);
+}
+
+.self-care-gc .self-care-bg {
+    background: var(--self-care);
+}
+
+@media screen and (min-width: 375px) {
+    main {
+        grid-template-columns: repeat(4, 1fr);
+        margin-top: 9rem;
+        grid-template-rows: repeat(2, 1fr);
+    }
+    
+    main section:first-of-type {
+        grid-row: 1 / -1;
+    }
+
+    .profile {
+        height: 30vh;
+        display: grid;
+    }
+
+    .work-info,
+    .play-info,
+    .study-info,
+    .exercise-info,
+    .social-info,
+    .self-care-info {
+        display: grid;
+        gap: .5rem;
+    }
+
+    .work-info p,
+    .play-info p,
+    .study-info p,
+    .exercise-info p,
+    .social-info p,
+    .self-care-info p {
+        font-size: .8rem;
+    }
+
+    .info-section .flex:last-of-type {
+        display: grid;
+        gap: 1rem;
+        padding: 1rem;
+        justify-content: start;
+    }
+
+    .info-section .flex button {
+        justify-self: start;
+        padding: 0;
+    }
+
+    .profile-names h2 {
+        font-size: 2rem;
+    }
+
+    .work-ctn .flex:first-of-type p,
+    .play-ctn .flex:first-of-type p,
+    .exercise-ctn .flex:first-of-type p,
+    .social-ctn .flex:first-of-type p,
+    .self-care-ctn .flex:first-of-type p,
+    .study-ctn .flex:first-of-type p {
+        font-size: .8rem;
+    }
+}
